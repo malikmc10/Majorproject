@@ -1,0 +1,11 @@
+JPS/ Scotia / NCB 
+
+this system allows users to be created on all three platforms, after which the admin can create JPS bills for customers and they will be able to pay using the card number they got when they register with either NCB or Scotia once a bill is paid changes will be reflected in there account.
+withdrawals and deposit can also be made with the aid of a teller.
+
+Running
+
+import the project, 
+change connection strings
+set JPS as main, 
+update the database migrations

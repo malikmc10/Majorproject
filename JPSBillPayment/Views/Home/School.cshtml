@@ -1,0 +1,22 @@
+﻿
+@{ 
+    ViewData["Title"] = "Ajax";
+}
+
+<h2>AJAX</h2>
+
+<form asp-controller="Home">
+    <div id="work">
+
+    </div>
+</form>
+
+<script>
+    $.ajax({
+        url: "Home/PieChart",
+        type: "Get",
+        success: function (response) {
+            $("#work").html(response)
+        }
+    });
+</script>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JPSBillPayment", "JPSBillPayment.csproj", "{A29BB217-9521-4139-8665-360955D9E26D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NCB Web Application", "..\..\NCB Web Application-1\NCB Web Application\NCB Web Application.csproj", "{FA27B3C9-B931-4851-BA51-87E593E7CE41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A29BB217-9521-4139-8665-360955D9E26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29BB217-9521-4139-8665-360955D9E26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29BB217-9521-4139-8665-360955D9E26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29BB217-9521-4139-8665-360955D9E26D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA27B3C9-B931-4851-BA51-87E593E7CE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA27B3C9-B931-4851-BA51-87E593E7CE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA27B3C9-B931-4851-BA51-87E593E7CE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA27B3C9-B931-4851-BA51-87E593E7CE41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15365A64-6D57-4483-AF17-99B14D25F3DA}
+	EndGlobalSection
+EndGlobal

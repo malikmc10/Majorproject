@@ -1,0 +1,92 @@
+﻿@model IEnumerable<JPSBillPayment.Models.Payment>
+
+@{
+    ViewData["Title"] = "CusPayments";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<style>
+    .table-dark {
+        color: #fff;
+        background-color: #663300;
+    }
+
+        .table-dark th,
+        .table-dark td,
+        .table-dark thead th {
+            border-color: #FF860D;
+        }
+</style>
+<div class="container">
+
+
+    <h2 class="text-center quick">
+        Your Payment History
+    </h2>
+    @if (Model.Any())
+    {
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PaymentId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.premisesNum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.amountPaid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.customerId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.cardNumber)
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PaymentId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.premisesNum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.amountPaid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.customerId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cardNumber)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header">
+                You Have Made No Payments
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    Use the button below to Make a Payment
+                </h5>
+                <a class="btn btn-primary" style="width:auto"
+                   asp-controller="Payment" asp-action="Make">Quick Pay</a>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,49 @@
+﻿@model JPSBillPayment.Models.Payment
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.amountPaid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.amountPaid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.customerId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.customerId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.premisesNum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.premisesNum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cardNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cardNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PaymentId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

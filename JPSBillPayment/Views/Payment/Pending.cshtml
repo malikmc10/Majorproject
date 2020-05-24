@@ -1,0 +1,106 @@
+﻿@model IEnumerable<JPSBillPayment.Models.Bill>
+
+@{
+    ViewBag.Title = "Pending Bills";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<style>
+    .table-dark {
+        color: #fff;
+        background-color: #663300;
+    }
+
+        .table-dark th,
+        .table-dark td,
+        .table-dark thead th {
+            border-color: #FF860D;
+        }
+</style>
+<div class="container">
+
+
+    <h2 class="text-center quick">
+        Your Pending Bills
+    </h2>
+    <h3 class="text-center quick"></h3>
+
+    @if (Model.Any())
+    {
+
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.createDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.dueDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.premisesNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.customerId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.amountDue)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.createDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.dueDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.premisesNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.customerId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.amountDue)
+                        </td>
+                        <td>
+                            <a asp-controller="Payment" asp-action="Index" class="btn btn-primary">PAY</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header">
+                You have no Pending Bills
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    Use the button below to Navigate To the Home Page
+                </h5>
+                <a class="btn btn-primary" style="width:auto"
+                   asp-controller="Home" asp-action="Index">Home Page</a>
+            </div>
+        </div>
+    }
+
+</div>
+
+

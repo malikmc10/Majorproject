@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                exportEnabled: true,
+                animationEnabled: true,
+                title: {
+                    text: "JPS Providing Jamaica's Energy Needs With Variety"
+                },
+                data: [{
+                    type: "pie",
+                    startAngle: 25,
+                    toolTipContent: "<b>{label}</b>: {y}%",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 16,
+                    indexLabel: "{label} - {y}%",
+                    dataPoints: [
+                        { y: 51.08, label: "Oil" },
+                        { y: 27.34, label: "Wind" },
+                        { y: 10.62, label: "Hydro" },
+                        { y: 5.02, label: "Solar" },
+                        { y: 4.07, label: "Geo-Thermal" },
+                        { y: 1.22, label: "Petroleum" },
+                        { y: 0.44, label: "Others" }
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+
+            $.ajax({
+                url: 'PieChart',
+                type: 'Get',
+                success: function (response) {
+                    $("#demo").html(response)
+                }
+            });
+    </script>
+</head>
+<body>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <form asp-controller="Home">
+        <div id="demo">
+
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@using System.Web.Helpers;
+@{
+ new Chart(width: 500, height: 300)
+
+            .AddTitle("Chart for languages")
+
+                 .AddSeries(chartType: "column",
+
+                   xValue: new[] { "ASP.NET", "HTML5", "C Language", "C++" },
+
+                     yValues: new[] { "90", "100", "80", "70" })
+
+                   .Write("png");
+
+}

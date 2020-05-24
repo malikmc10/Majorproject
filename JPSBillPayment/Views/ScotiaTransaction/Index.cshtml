@@ -1,0 +1,62 @@
+﻿@model IEnumerable<JPSBillPayment.Models.ScotiaTransaction>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/ScotiaLayout.cshtml";
+}
+
+<h1>Index</h1>
+<div>
+    <li class="btn btn-primary">
+        <a class="nav-link text-light" asp-area="" asp-controller="ScotiaTransaction" asp-action="CusTransactions">Customer</a>
+    </li>
+    <li class="btn btn-primary">
+        <a class="nav-link text-light" asp-area="" asp-controller="ScotiaTransaction" asp-action="Index">Transactions</a>
+    </li>
+    <li class="btn btn-primary">
+        <a class="nav-link text-light" asp-area="" asp-controller="ScotiaTransaction" asp-action="Deposit">Make Deposit</a>
+    </li>
+    <li class="btn btn-primary">
+        <a class="nav-link text-light" asp-area="" asp-controller="ScotiaTransaction" asp-action="Withdraw">Make Withdrawal</a>
+    </li>
+</div>
+</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
